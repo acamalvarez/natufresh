@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-Name,Category,Tag,Price,Description,
-Carrot,Vegetable,Orange,5000,Orange
-Carrot,Vegetable,Chop,5000,Orange
-Paprika,Vegetable,Chop,5000,Red
-Broccoli,Vegetable,Chop,7000,Green
-Bean,Vegetable,Chop,6000,Green
-=======
 id,Name,Category,Tag,Price,Description,
 1,Carrot,Vegetable,Orange,5000,Orange
 1,Carrot,Vegetable,Chop,5000,Orange
@@ -15,4 +7,3 @@ id,Name,Category,Tag,Price,Description,
 5,Carrot,Vegetable,Slice,5000,Orange
 6,Strawberry,Fruit,Complete,8000,Red
 7,Blueberry,Fruit,Complete,9000,Purple
->>>>>>> add_products
