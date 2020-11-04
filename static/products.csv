@@ -5,4 +5,5 @@ id,Name,Category,Tag,Price,Description,
 3,Broccoli,Vegetable,Chop,7000,Green
 4,Bean,Vegetable,Chop,6000,Green
 5,Carrot,Vegetable,Slice,5000,Orange
-6,strawberry,Fruit,Complete,8000,Red
+6,Strawberry,Fruit,Complete,8000,Red
+7,Blueberry,Fruit,Complete,9000,Purple
