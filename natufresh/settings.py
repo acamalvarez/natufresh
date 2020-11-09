@@ -80,10 +80,25 @@ WSGI_APPLICATION = 'natufresh.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# for using the Python's default database
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# for using the postgresql database
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'DEMO_TEST',
+        'USER': 'postgres',
+        'PASSWORD': '@Bofeli57',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
