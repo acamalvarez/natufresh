@@ -91,13 +91,26 @@ WSGI_APPLICATION = 'natufresh.wsgi.application'
 
 # for using the postgresql database
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'DEMO_TEST',
+#         'USER': 'postgres',
+#         'PASSWORD': '@Bofeli57',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+# for using the AWS database
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DEMO_TEST',
-        'USER': 'postgres',
-        'PASSWORD': '@Bofeli57',
-        'HOST': 'localhost',
+        'NAME': 'natufresh_db',
+        'USER': 'acamalvarez',
+        'PASSWORD': 'Pysku#g3le',
+        'HOST': 'natufreshdb-1.cnj01ks9dkkl.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
