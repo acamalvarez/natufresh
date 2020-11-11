@@ -55,7 +55,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -153,7 +153,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
@@ -168,7 +168,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAiL_HOST_PASSWORD = env('EMAiL_HOST_PASSWORD')
+EMAiL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
 # https://myaccount.google.com/u/1/lesssecureapps?pli=1&rapt=AEjHL4OaN3EMm8Z59IxdHlCNMc0iRGQHo7JXpPKHOoZsVLiEx3mgj3zvnwsfKQH4r6bslohqJlFNDvOgaRrHQz3B52EC16XICg
 
@@ -186,3 +186,5 @@ AWS_S3_FILE_OVERWRITE = True
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+STATIC_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
