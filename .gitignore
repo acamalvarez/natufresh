@@ -1,4 +1,4 @@
-natufresh-env
+natufresh-env/
 .vscode/
 natufresh/.env
 natufresh/__pycache__/
