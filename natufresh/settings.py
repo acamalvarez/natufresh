@@ -12,7 +12,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 
-from pathlib import Path
+# from pathlib import Path
+
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +28,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1_15k^lya636!60f60fkug1=uwue62m5_@o2x4cr)-6ym+4r%m'
+# SECRET_KEY = '1_15k^lya636!60f60fkug1=uwue62m5_@o2x4cr)-6ym+4r%m'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,15 +88,6 @@ WSGI_APPLICATION = 'natufresh.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# for using the Python's default database
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 # for using the postgresql database
 
 # DATABASES = {
@@ -109,10 +106,10 @@ WSGI_APPLICATION = 'natufresh.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'natufresh_db',
-        'USER': 'acamalvarez',
-        'PASSWORD': '#hwogbAsdi#728',
-        'HOST': 'natufreshdb-1.cnj01ks9dkkl.us-east-2.rds.amazonaws.com',
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
+        'HOST': env('DATABASE_HOST'),
         'PORT': '5432',
     }
 }
@@ -168,20 +165,20 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'acalvm@gmail.com'
-EMAiL_HOST_PASSWORD = '@Bofeli57'
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAiL_HOST_PASSWORD = env('EMAiL_HOST_PASSWORD')
 
 # https://myaccount.google.com/u/1/lesssecureapps?pli=1&rapt=AEjHL4OaN3EMm8Z59IxdHlCNMc0iRGQHo7JXpPKHOoZsVLiEx3mgj3zvnwsfKQH4r6bslohqJlFNDvOgaRrHQz3B52EC16XICg
 
 
 #S3 buckects configuration
 
-AWS_ACCESS_KEY_ID = 'AKIAUOZLNSAVWHUC2L62'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'natufresh-bucket'
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_HOST = 's3.us-east-2.amazonaws.com'
 AWS_S3_REGION_NAME = 'us-east-2'
-AWS_LOCATION = 'images/'
+# AWS_LOCATION = 'images/'
 
 AWS_S3_FILE_OVERWRITE = True
 AWS_DEFAULT_ACL = None
