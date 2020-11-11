@@ -31,7 +31,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['natu-fresh.herokuapp.com', '127.0.0.1']
 
@@ -167,8 +167,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAiL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAiL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 # https://myaccount.google.com/u/1/lesssecureapps?pli=1&rapt=AEjHL4OaN3EMm8Z59IxdHlCNMc0iRGQHo7JXpPKHOoZsVLiEx3mgj3zvnwsfKQH4r6bslohqJlFNDvOgaRrHQz3B52EC16XICg
 
