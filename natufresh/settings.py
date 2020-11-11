@@ -15,7 +15,8 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,10 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'django_extensions',
-
     'accounts.apps.AccountsConfig',
-    'django_filters'
+
+    'django_extensions',
+    'django_filters',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -109,7 +111,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'natufresh_db',
         'USER': 'acamalvarez',
-        'PASSWORD': 'Pysku#g3le',
+        'PASSWORD': '#hwogbAsdi#728',
         'HOST': 'natufreshdb-1.cnj01ks9dkkl.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
     }
@@ -154,13 +156,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/images/'
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
 # SMTP Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -171,3 +172,18 @@ EMAIL_HOST_USER = 'acalvm@gmail.com'
 EMAiL_HOST_PASSWORD = '@Bofeli57'
 
 # https://myaccount.google.com/u/1/lesssecureapps?pli=1&rapt=AEjHL4OaN3EMm8Z59IxdHlCNMc0iRGQHo7JXpPKHOoZsVLiEx3mgj3zvnwsfKQH4r6bslohqJlFNDvOgaRrHQz3B52EC16XICg
+
+
+#S3 buckects configuration
+
+AWS_ACCESS_KEY_ID = 'AKIAUOZLNSAVWHUC2L62'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'natufresh-bucket'
+AWS_S3_HOST = 's3.us-east-2.amazonaws.com'
+AWS_S3_REGION_NAME = 'us-east-2'
+AWS_LOCATION = 'images/'
+
+AWS_S3_FILE_OVERWRITE = True
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
