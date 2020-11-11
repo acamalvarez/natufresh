@@ -1,0 +1,1 @@
+web: gunicorn natufresh.wsgi --log-file -
