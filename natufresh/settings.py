@@ -194,4 +194,4 @@ STATIC_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 # comment to work on local
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
