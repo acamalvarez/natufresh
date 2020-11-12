@@ -161,8 +161,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #     os.path.join(BASE_DIR, 'static')
 # ]
 
-STATIC_DIRS = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/static'
-
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
@@ -194,5 +192,7 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
-# comment to work on local
+STATICFILES_DIRS = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/static'
+
+
 django_heroku.settings(locals())
