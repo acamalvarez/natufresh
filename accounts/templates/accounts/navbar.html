@@ -9,7 +9,7 @@
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-link" href="/"><img src="{% static 'images/acam_logo.png' %}"></a>
+  <a class="navbar-link" href="/"><img src="{% static 'images/natufresh_logo2.png' %}"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -17,8 +17,8 @@
     <ul class="navbar-nav">
       {% if request.user.is_staff %}
         <a class="nav-link" href="{% url 'home' %}">Dashboard</a>
-        <a class="nav-link" href="{% url 'products' %}">Products</a>
       {% else %}
+      <a class="nav-link" href="{% url 'products' %}">Products</a>
         <a class="nav-link" href="{% url 'account' %}">Settings</a>
       {% endif %}
     </ul>
