@@ -29,6 +29,7 @@ class Product(models.Model):
     category = models.CharField(max_length=200, null=True, choices=CATEGORY)
     description = models.CharField(max_length=200, null=True, blank=True)
     tags = models.ManyToManyField(Tag)
+    product_pic = models.ImageField(default="default_product.png", null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

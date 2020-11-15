@@ -19,6 +19,7 @@ def run():
             tag = row[3]
             price = float(row[4])
             description = row[5]
+            picture = row[6]
         except:
             id = None
             name = None
@@ -26,12 +27,13 @@ def run():
             tag = None
             price = None
             description = None
+            picture = None
 
         tag, created = Tag.objects.get_or_create(name=row[3])
 
         product, created = Product.objects.get_or_create(id=id,
             name=name, price=price, category=category, 
-            description=description)
+            description=description, product_pic=picture)
 
         product.tags.add(tag)
         
