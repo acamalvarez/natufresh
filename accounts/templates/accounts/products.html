@@ -1,5 +1,5 @@
 {% extends 'accounts/main.html' %}
-
+{% load static %}
 {% block content %}
 
 <br>
@@ -16,13 +16,15 @@
                     <th>Product</th>
                     <th>Category</th>
                     <th>Price</th>
+                    <th>Picture</th>
                 </tr>
 
                 {% for product in products %}
-                <tr>
-                    <td>{{product.name}}</td>
-                    <td>{{product.category}}</td>
-                    <td>{{product.price}}</td>
+                <tr style="vertical-align: middle;">
+                    <td style="vertical-align: middle;">{{product.name}}</td>
+                    <td style="vertical-align: middle;">{{product.category}}</td>
+                    <td style="vertical-align: middle;">{{product.price}}</td>
+                    <td style="vertical-align: middle;"><img src="{{product.product_pic.url}}"></td>
                     
                 </tr>
                 {% endfor %}

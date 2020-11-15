@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['natu-fresh.herokuapp.com', '127.0.0.1']
 
@@ -156,9 +156,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
@@ -177,11 +175,12 @@ EMAiL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 #S3 buckects configuration
 
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+print(AWS_ACCESS_KEY_ID)
 AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_HOST = 's3.us-east-2.amazonaws.com'
 AWS_S3_REGION_NAME = 'us-east-2'
-# AWS_LOCATION = 'images/'
+AWS_LOCATION = ''
 
 AWS_S3_FILE_OVERWRITE = True
 AWS_DEFAULT_ACL = None
