@@ -110,8 +110,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'natufresh_db',
-        'USER': 'acamalvarez',
-        'PASSWORD': '#hwogbAsdi#728',
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
         'HOST': 'natufreshdb-1.cnj01ks9dkkl.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
     }

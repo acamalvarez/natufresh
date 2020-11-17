@@ -29,7 +29,7 @@ def run():
             description = None
             picture = None
 
-        tag, created = Tag.objects.get_or_create(name=row[3])
+        tag = Tag.objects.get_or_create(name=row[3])
 
         product, created = Product.objects.get_or_create(id=id,
             name=name, price=price, category=category, 
