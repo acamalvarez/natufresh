@@ -91,21 +91,19 @@ WSGI_APPLICATION = 'natufresh.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# for using the postgresql database
-
+# uncomment to use the postgresql database
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'DEMO_TEST',
 #         'USER': 'postgres',
-#         'PASSWORD': '@Bofeli57',
+#         'PASSWORD': env('DATABASE_PASSWORD2'),
 #         'HOST': 'localhost',
 #         'PORT': '5432',
 #     }
 # }
 
-# for using the AWS database
-
+# uncomment to use the AWS database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
